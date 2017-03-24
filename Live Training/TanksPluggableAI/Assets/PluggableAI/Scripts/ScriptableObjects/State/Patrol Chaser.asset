@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 623c33e882a134f8da967e6d3959eb2f, type: 3}
-  m_Name: PatrolChaser
+  m_Name: Patrol Chaser
   m_EditorClassIdentifier: 
-  actions: []
-  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  actions:
+  - {fileID: 11400000, guid: 95e95f01e2b0b47e39cab675edcc2299, type: 2}
+  sceneGizmoColor: {r: 0.3923301, g: 0.875, b: 0.16084558, a: 1}

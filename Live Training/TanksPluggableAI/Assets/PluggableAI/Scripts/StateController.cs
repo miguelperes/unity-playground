@@ -14,6 +14,7 @@ public class StateController : MonoBehaviour {
 	[HideInInspector] public Complete.TankShooting tankShooting;
 	[HideInInspector] public List<Transform> wayPointList;
 	[HideInInspector] public int nextWayPoint;
+	[HideInInspector] public Transform chaseTarget;
 
 	private bool aiActive;
 
