@@ -9,6 +9,7 @@ public class StateController : MonoBehaviour {
 	public State currentState;
 	public EnemyStats enemyStats;
 	public Transform eyes;
+	public State remainState;
 
 	[HideInInspector] public NavMeshAgent navMeshAgent;
 	[HideInInspector] public Complete.TankShooting tankShooting;
@@ -38,6 +39,13 @@ public class StateController : MonoBehaviour {
 		}
 	}
 
+	void Update() {
+		if(!aiActive)
+			return;
+		
+		currentState.UpdateState(this);
+	}
+
 	void OnDrawGizmos()
 	{
 		if(currentState != null && eyes != null) {
@@ -46,11 +54,10 @@ public class StateController : MonoBehaviour {
 		}
 	}
 
-	void Update() {
-		if(!aiActive)
-			return;
-		
-		currentState.UpdateState(this);
+	public void TransitionToState(State nextState) {
+		if(nextState != remainState) {
+			currentState = nextState;		}
 	}
+
 
 }
