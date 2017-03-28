@@ -567,6 +567,7 @@ MonoBehaviour:
   m_TankPrefabs:
   - {fileID: 173472, guid: 756d3a6506f2f8241b4e8badde68567a, type: 2}
   - {fileID: 173472, guid: 7ff6571596052b34c9b5fc1ce3fd7244, type: 2}
+  - {fileID: 173472, guid: cd5ded00b67294f3dbefc9ac181cc931, type: 2}
   m_Tanks:
   - m_PlayerColor: {r: 0.16470589, g: 0.39215687, b: 0.69803923, a: 0}
     m_SpawnPoint: {fileID: 194018016}
@@ -577,6 +578,13 @@ MonoBehaviour:
     m_WayPointList: []
   - m_PlayerColor: {r: 0.8980392, g: 0.18039216, b: 0.15686275, a: 0}
     m_SpawnPoint: {fileID: 2083660209}
+    m_PlayerNumber: 2
+    m_ColoredPlayerText: 
+    m_Instance: {fileID: 0}
+    m_Wins: 0
+    m_WayPointList: []
+  - m_PlayerColor: {r: 0.2437593, g: 0.8980392, b: 0.15686274, a: 0}
+    m_SpawnPoint: {fileID: 1647209239}
     m_PlayerNumber: 2
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
