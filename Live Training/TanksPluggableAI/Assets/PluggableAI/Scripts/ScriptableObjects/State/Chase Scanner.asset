@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 623c33e882a134f8da967e6d3959eb2f, type: 3}
-  m_Name: Chase Chaser
+  m_Name: Chase Scanner
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 11400000, guid: c1f99430e85a44e439e3c04a1cb0d935, type: 2}
@@ -17,5 +17,5 @@ MonoBehaviour:
   transitions:
   - decision: {fileID: 11400000, guid: 682cee43be9ad4303b52bbd89638ec34, type: 2}
     trueState: {fileID: 11400000, guid: 99b840ac27cb54d298b20698642806cc, type: 2}
-    falseState: {fileID: 11400000, guid: 5b5b1e26e8d8e4573aedb50c55806e86, type: 2}
+    falseState: {fileID: 11400000, guid: 81f4a1b7a12ce4ff5a2d4cecf5f38392, type: 2}
   sceneGizmoColor: {r: 1, g: 0, b: 0, a: 1}
