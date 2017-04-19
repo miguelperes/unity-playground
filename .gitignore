@@ -54,6 +54,12 @@ Temporary Items
 /Live Training/TanksPluggableAI/.vscode/
 /Live Training/TanksPluggableAI/Library/
 /Live Training/TanksPluggableAI/Temp/
+/Shader/ShadersPlayground/.vscode/
+/Shader/ShadersPlayground/Library/
+/Shader/ShadersPlayground/Temp/
+**/Library/
+**/Temp/
+**/.vscode/
 # Visual Studio 2015 cache directory
 /.vs/
 
