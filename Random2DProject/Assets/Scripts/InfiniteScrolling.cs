@@ -6,13 +6,14 @@ public class InfiniteScrolling : MonoBehaviour
 {
 
   public float speed = 0.2f;
+	public bool changeScaleAfterReset = false;
+	public bool changeColorAfterReset = false;
   public Transform spawnPoint;
   public Transform restartPoint;
-  bool shouldRespawn = false;
-	SpriteRenderer renderer; 
+	SpriteRenderer sRenderer; 
 
 void Start() {
-	renderer = GetComponentInChildren<SpriteRenderer>();
+	sRenderer = GetComponentInChildren<SpriteRenderer>();
 }
 
   void Update() {
@@ -20,7 +21,8 @@ void Start() {
 
     if(isAfterRestartPoint()) {
       recalculatePosition();
-      shouldRespawn = false;
+			if(changeScaleAfterReset) changeScale();
+			if(changeColorAfterReset) changeColor();
     }
   }
   
@@ -40,8 +42,26 @@ void Start() {
     this.transform.position = newPosition;
   }
 
+	void changeScale() {
+		Vector3 scale = this.transform.localScale;
+		this.transform.localScale = new Vector3(scale.x, Random.Range(0.5f, 1.5f), scale.z);
+
+		
+		/* Fix scaled building into camera ground */
+		// float lowPosition = this.transform.position.y - (sRenderer.bounds.size.y / 2);
+		// Plane downPlane = GeometryUtility.CalculateFrustumPlanes(Camera.main)[3];
+		// float cameraGroundHeight = downPlane.distance;
+		// float distanceFromCameraGround = Mathf.Abs(lowPosition - cameraGroundHeight);
+		// Debug.Log("distanceFromCameraGround: " + distanceFromCameraGround);
+		
+	}
+
+	void changeColor() {
+		sRenderer.color = Random.ColorHSV();
+	}
+
   bool isAfterRestartPoint() {
-    float centerPosition = transform.position.x + (renderer.bounds.size.x / 2);
+    float centerPosition = transform.position.x + (sRenderer.bounds.size.x / 2);
     
     if(centerPosition < restartPoint.position.x)
       return true;
