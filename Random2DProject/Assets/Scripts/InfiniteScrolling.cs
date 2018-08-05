@@ -44,7 +44,7 @@ void Start() {
 
 	void changeScale() {
 		Vector3 scale = this.transform.localScale;
-		this.transform.localScale = new Vector3(scale.x, Random.Range(0.5f, 1.5f), scale.z);
+		this.transform.localScale = new Vector3(scale.x, Random.Range(0.1f, 2.0f), scale.z);
 
 		
 		/* Fix scaled building into camera ground */
