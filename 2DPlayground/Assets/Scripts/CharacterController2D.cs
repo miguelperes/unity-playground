@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour {
 	[SerializeField] private float jumpForce = 1f;
 	[SerializeField] private LayerMask groundReference;
-	[SerializeField] private Collider2D characterCollider;
+	[SerializeField] private Transform transformToCheck;
 
 	private bool isGrounded;
 
@@ -13,7 +13,13 @@ public class CharacterController2D : MonoBehaviour {
 
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D>();
-		characterCollider = GetComponent<Collider2D>();
+
+		if(!transformToCheck)
+			transformToCheck = gameObject.transform;
+	}
+
+	private void Update() {
+		Debug.Log(isGrounded);
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
@@ -32,5 +38,19 @@ public class CharacterController2D : MonoBehaviour {
 
 	private bool isInLayer(LayerMask mask, int layer) {
 		return mask == (mask | (1 << layer));
+	}
+
+	/* Alternative way to check if character is grounded, to be called in FixedUdpdate */
+	private void checkIfGrounded() {
+		isGrounded = false;
+
+		// Position to be checked against ground position
+		Vector2 positionToCheck = transformToCheck.position;
+
+		Collider2D [] colliders = Physics2D.OverlapCircleAll(positionToCheck, 1f, groundReference);
+		for (int i = 0; i < colliders.Length; i++) {
+			if (colliders[i].gameObject != gameObject)
+				isGrounded = true;
+		}
 	}
 }
