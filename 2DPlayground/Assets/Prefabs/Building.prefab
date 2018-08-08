@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 4027848294081598}
   - component: {fileID: 114846944819738912}
   - component: {fileID: 61138294011333012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Building
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  changeScaleAfterReset: 0
-  changeColorAfterReset: 1
+  changeScaleAfterReset: 1
+  changeColorAfterReset: 0
   spawnPoint: {fileID: 0}
   restartPoint: {fileID: 0}
 --- !u!212 &212424740312920356

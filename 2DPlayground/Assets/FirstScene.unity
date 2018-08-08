@@ -276,7 +276,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027848294081598, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4911572085261608, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -316,6 +316,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1961593669590758, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
@@ -336,7 +340,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170298218}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82dfff27bc7a5403f81676146bc61c0d, type: 3}
   m_Name: 
@@ -357,7 +361,7 @@ GameObject:
   m_Layer: 0
   m_Name: BuildingsRestartPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -372,7 +376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 997280275}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290213442 stripped
 GameObject:
@@ -390,7 +394,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 290213442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82dfff27bc7a5403f81676146bc61c0d, type: 3}
   m_Name: 
@@ -417,7 +421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &360641062
 Transform:
   m_ObjectHideFlags: 0
@@ -475,7 +479,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5263866, y: 0.5033165}
   m_EdgeRadius: 0
 --- !u!114 &360641065
 MonoBehaviour:
@@ -488,8 +492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa349b6794f9d4d3598924ba06b0077c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 5
-  walkVelocity: 5
+  jumpForce: 1
+  groundReference:
+    serializedVersion: 2
+    m_Bits: 256
+  groundCheck: {fileID: 0}
+  characterCollider: {fileID: 0}
 --- !u!1 &440402070
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +510,7 @@ GameObject:
   m_Layer: 0
   m_Name: BackgroundRestartPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -587,7 +595,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027848294081598, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4911572085261608, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -631,6 +639,18 @@ Prefab:
       propertyPath: m_Name
       value: Building (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1111338856544416, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961593669590758, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961593669590758, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
@@ -661,10 +681,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1553112526}
-  - {fileID: 290213443}
   - {fileID: 170298219}
   - {fileID: 284582058}
   - {fileID: 2014435417}
+  - {fileID: 290213443}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -776,7 +796,7 @@ GameObject:
   m_Layer: 0
   m_Name: InnerBackRestartPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1028,17 +1048,11 @@ Prefab:
     - target: {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2,
-        type: 2}
-      propertyPath: changeScaleAfterReset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2,
-        type: 2}
-      propertyPath: changeColorAfterReset
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961593669590758, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
@@ -1218,7 +1232,7 @@ GameObject:
   m_Layer: 0
   m_Name: BuildingsSpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1233,7 +1247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 997280275}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2098930125
 GameObject:
