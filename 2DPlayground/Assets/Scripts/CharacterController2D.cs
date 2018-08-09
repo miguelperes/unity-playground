@@ -8,21 +8,23 @@ public class CharacterController2D : MonoBehaviour {
 	[SerializeField] private Transform transformToCheck;
 
 	private bool isGrounded;
-
 	Rigidbody2D rigidBody2D;
 
-	void Start () {
+	public void jump() {
+		if(isGrounded) {
+			isGrounded = false;
+			rigidBody2D.AddForce(new Vector2(0f, jumpForce));
+		}
+	}
+
+	private void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D>();
 
 		if(!transformToCheck)
 			transformToCheck = gameObject.transform;
 	}
 
-	private void Update() {
-		Debug.Log(isGrounded);
-	}
-
-	void OnCollisionEnter2D(Collision2D other) {
+	private void OnCollisionEnter2D(Collision2D other) {
 		int otherLayer = other.collider.gameObject.layer;
 
 		if(isInLayer(groundReference, otherLayer))
