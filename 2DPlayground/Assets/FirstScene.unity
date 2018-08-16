@@ -346,8 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  changeScaleAfterReset: 1
-  changeColorAfterReset: 0
+  changeScaleAfterReset: 0
+  changeColorAfterReset: 1
   spawnPoint: {fileID: 2014435417}
   restartPoint: {fileID: 284582058}
 --- !u!1 &284582057
@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  changeScaleAfterReset: 1
-  changeColorAfterReset: 0
+  changeScaleAfterReset: 0
+  changeColorAfterReset: 1
   spawnPoint: {fileID: 2014435417}
   restartPoint: {fileID: 284582058}
 --- !u!1 &360641061
@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 360641063}
   - component: {fileID: 360641064}
   - component: {fileID: 360641065}
+  - component: {fileID: 360641066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -455,7 +456,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &360641064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -492,12 +493,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa349b6794f9d4d3598924ba06b0077c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 1
+  jumpForce: 50
+  jumpDecayRate: 200
   groundReference:
     serializedVersion: 2
     m_Bits: 256
-  groundCheck: {fileID: 0}
-  characterCollider: {fileID: 0}
+  transformToCheck: {fileID: 0}
+--- !u!114 &360641066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360641061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b167b64afc7481cb8b5d60c5e942ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 360641065}
 --- !u!1 &440402070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1067,16 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2,
+        type: 2}
+      propertyPath: changeScaleAfterReset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114846944819738912, guid: ca0a27ae577eb4cd2a75712f9cba5cb2,
+        type: 2}
+      propertyPath: changeColorAfterReset
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0a27ae577eb4cd2a75712f9cba5cb2, type: 2}
   m_IsPrefabAsset: 0
@@ -1259,7 +1282,7 @@ GameObject:
   - component: {fileID: 2098930126}
   - component: {fileID: 2098930127}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

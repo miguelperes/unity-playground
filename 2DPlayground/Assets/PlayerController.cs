@@ -5,17 +5,37 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public CharacterController2D controller;
-
-	// Use this for initialization
+		bool jump;
+		bool longJump;
+	
 	void Start () {
-		
+		jump = false;
+		longJump = false;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetButtonDown("Jump")) {
-			Debug.Log("Jump!");
-			controller.jump();
+	private void Update () {
+		handleJumpInput();
+	}
+
+	private void FixedUpdate() {
+			if(jump)
+				controller.jump();
+			
+			if(longJump)
+				controller.longJump();	
+	}
+
+	private void handleJumpInput() {
+		if(Input.GetButtonDown("Jump"))
+			jump = true;
+		
+		if(Input.GetButton("Jump"))
+			longJump = true;
+
+		if(Input.GetButtonUp("Jump")) {
+			jump = longJump = false;
 		}
 	}
+
+
 }
