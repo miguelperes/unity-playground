@@ -1,0 +1,56 @@
+title: Start
+tags: 
+colorID: 0
+position: 553,115
+---
+A: Hey, I'm a character in a script! #line:675d661a
+B: And I am too! You are talking to me! #line:cde582fb
+-> What's going on #line:fa2e1356
+    A: Why this is a demo of the script system! #line:38b2353e
+    B: And you're in it! #line:31ad4160
+-> Um ok #line:6c0fb745
+A: How delightful! #line:036fb4f1
+B: What would you prefer to do next? #line:d35a9665
+[[Leave|Leave]] #line:e6cebba9
+[[Learn more|LearnMore]] #line:30ee1a0e
+===
+title: Leave
+tags: 
+colorID: 0
+position: 387,487
+---
+A: Oh, goodbye! #line:1971e104
+B: You'll be back soon! #line:39d35a39
+===
+title: LearnMore
+tags: 
+colorID: 0
+position: 763,472
+---
+Ok, I bet you wanna know how options work, right?
+-> Yeah, sure!
+    You actually just write an ascii arrow (->) and tab the answer. But what about nested options? Do you know how they work?
+        -> I think I do
+            Good for you!
+        -> No idea
+            Well, to google then!
+            [[Go to google?|PassiveAgressive]]
+            
+-> Not quite
+    Well the, GTFO! >:(
+This part will be out for both answers, I guess?
+===
+title: PassiveAgressive
+tags: 
+colorID: 0
+position: 1133,274
+---
+YOU FUCKING MORON!
+===
+title: Node5
+tags: 
+colorID: 0
+position: 99,334
+---
+Empty Text
+===
